@@ -15,7 +15,7 @@ if [ "$PHPCS" == 1 ]; then
 fi
 
 # Move to APP
-cd ../app
+cd app
 
 EXIT_CODE=0
 
