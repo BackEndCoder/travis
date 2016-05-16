@@ -1,21 +1,21 @@
 #!/bin/bash
 
 if [ "$PHPCS" == 1 ]; then
-    Vendor/bin/phpcs --config-set installed_paths Vendor/cakephp/cakephp-codesniffer;
+    ../Vendor/bin/phpcs --config-set installed_paths ../Vendor/cakephp/cakephp-codesniffer;
 
-    ARGS="-p --extensions=php --standard=CakePHP --ignore=Vendor/ .";
+    ARGS="-p --extensions=php --standard=CakePHP --ignore=../Vendor/ .";
     if [ -n "$PHPCS_IGNORE" ]; then
         ARGS="$ARGS --ignore='$PHPCS_IGNORE'"
     fi
     if [ -n "$PHPCS_ARGS" ]; then
         ARGS="$PHPCS_ARGS"
     fi
-    eval "Vendor/bin/phpcs" $ARGS
+    eval "../Vendor/bin/phpcs" $ARGS
     exit $?
 fi
 
 # Move to APP
-cd app
+cd ../app
 
 EXIT_CODE=0
 
